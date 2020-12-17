@@ -1,0 +1,8 @@
+create procedure st_insertusers
+@name varchar(32),
+@username varchar(32),
+@password nvarchar(32),
+@phone varchar(11),
+@email varchar(32)
+as
+insert into users(usr_name,usr_username,usr_password,usr_phone,usr_email) values (@name,@username,@password,@phone,@email)

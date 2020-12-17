@@ -1,0 +1,4 @@
+create procedure st_deleteusers
+@id int
+as
+delete from users where usr_id = @id

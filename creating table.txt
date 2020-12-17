@@ -1,0 +1,12 @@
+use DEMO /*create database*/
+
+create table users
+(
+usr_id int not null identity primary key,
+usr_name varchar(32) not null,
+usr_username varchar(32) not null,
+usr_password nvarchar(32) not null,
+usr_phone varchar(11) not null,
+usr_email varchar(32) not null,
+usr_status tinyint not null default 1
+)

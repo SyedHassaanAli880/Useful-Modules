@@ -1,0 +1,17 @@
+create procedure st_updateusers
+@name varchar(32),
+@username varchar(32),
+@password nvarchar(32),
+@phone varchar(11),
+@email varchar(32),
+@id int
+as
+update users
+set
+usr_name = @name,
+usr_username = @username,
+usr_password = @password,
+usr_phone = @phone,
+usr_email = @email
+where 
+usr_id = @id

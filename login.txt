@@ -1,0 +1,34 @@
+try
+            {
+                con.Open();
+
+                cmd.Connection = con;
+
+                cmd.CommandText = "select * from AUTH";
+
+                SqlDataReader sqr = cmd.ExecuteReader();
+
+                if (sqr.Read())
+                {
+                    if (username_textBox.Text.Equals(sqr["username"]) && password_textBox.Text.Equals(sqr["password"]))
+                    { 
+                        home_screen hs = new home_screen();
+
+                        MainClass.ShowWindow(hs,MDI.ActiveForm);
+                    }
+                    else
+                    {
+                        MainClass.ShowMsg("Incorrect password or username.","error");
+                    }
+                }
+
+                con.Close();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+                con.Close();
+            }
+        }
